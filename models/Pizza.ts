@@ -28,7 +28,11 @@ export class Pizza {
     console.log(
       `Pizza avec pâte ${this.pate}, sauce ${
         this.sauce
-      }, garnitures : ${this.garnitures.join(", ")}`
+      }, garnitures : ${this.garnitures.join(", ")},  en cours de préparation !`
     );
+
+    this.cuire();
+
+    this.emballer();
   }
 }

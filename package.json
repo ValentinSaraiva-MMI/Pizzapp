@@ -1,5 +1,14 @@
 {
+  "name": "Pizzapp",
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
+    "build": "tsc",
+    "start": "node dist/builderPattern/PizzaBuilder.js",
     "test": "vitest"
+  },
+  "devDependencies": {
+    "ts-node": "^...",
+    "vitest": "^..."
   }
 }

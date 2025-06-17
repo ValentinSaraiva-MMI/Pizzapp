@@ -1,4 +1,4 @@
-import { Pizza } from "../models/Pizza";
+import { Pizza } from "../models/Pizza.js";
 
 export class PizzaBuilder {
   private pate: string = "";
@@ -33,3 +33,13 @@ export class PizzaBuilder {
       return new Pizza(this.pate, this.sauce, this.taille, this.garnitures);
   }
 }
+
+const pizza = new PizzaBuilder()
+  .setPate("fine")
+  .setSauce("tomate")
+  .setTaille("grande")
+  .addGarniture("fromage")
+  .addGarniture("champignons")
+  .build();
+
+pizza.afficher();
