@@ -1,5 +1,9 @@
 import { Pizza } from "../models/Pizza.js";
 
+/**
+ * Permet de construire une pizza personnalisée étape par étape.
+ * Utilise le pattern Builder.
+ */
 export class PizzaBuilder {
   private pate: string = "";
   private sauce: string = "";
@@ -26,6 +30,10 @@ export class PizzaBuilder {
     return this;
   }
 
+  /**
+   * Construit la pizza personnalisée.
+   * Lance une erreur si des éléments obligatoires ne sont pas définis.
+   */
   build() {
     if (!this.pate || !this.sauce || !this.taille) {
       throw new Error("Pâte,sauce et taille doivent être définies.");

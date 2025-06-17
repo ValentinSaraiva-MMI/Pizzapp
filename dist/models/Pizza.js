@@ -1,3 +1,6 @@
+/**
+ * Représente une pizza avec ses caractéristiques principales.
+ */
 export class Pizza {
     type;
     pate;
@@ -17,6 +20,9 @@ export class Pizza {
     emballer() {
         console.log("Emballage de la pizza.");
     }
+    /**
+     * Affiche les détails de la pizza, puis lance la cuisson et l'emballage.
+     */
     afficher() {
         console.log(`Pizza ${this.type} avec pâte ${this.pate}, sauce ${this.sauce}, garnitures : ${this.garnitures.join(", ")} de taille ${this.taille}`);
         this.cuire();

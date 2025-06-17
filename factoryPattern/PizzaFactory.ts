@@ -1,5 +1,9 @@
 import { Pizza } from "../models/Pizza.js";
 
+/**
+ * Fabrique des pizzas selon un type donné.
+ * Utilise le pattern Factory.
+ */
 export class PizzaFactory {
   static createPizza(type: string): Pizza {
     switch (type.toLowerCase()) {
