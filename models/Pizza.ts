@@ -1,15 +1,18 @@
 export class Pizza {
+  public type: string;
   public pate: string;
   public sauce: string;
   public taille: string;
   public garnitures: string[];
 
   constructor(
+    type: string,
     pate: string,
     sauce: string,
     taille: string,
     garnitures: string[]
   ) {
+    this.type = type;
     this.pate = pate;
     this.sauce = sauce;
     this.taille = taille;
@@ -26,9 +29,9 @@ export class Pizza {
 
   afficher(): void {
     console.log(
-      `Pizza avec pâte ${this.pate}, sauce ${
+      `Pizza ${this.type} avec pâte ${this.pate}, sauce ${
         this.sauce
-      }, garnitures : ${this.garnitures.join(", ")},  en cours de préparation !`
+      }, garnitures : ${this.garnitures.join(", ")} de taille ${this.taille}`
     );
 
     this.cuire();
