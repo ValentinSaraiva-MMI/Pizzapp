@@ -1,35 +1,37 @@
-/**
- * The Singleton class defines an `instance` getter, that lets clients access
- * the unique singleton instance.
- */
-class Singleton {
-  static #instance: Singleton;
+import { Pizza } from "../models/Pizza.js";
 
-  /**
-   * The Singleton's constructor should always be private to prevent direct
-   * construction calls with the `new` operator.
-   */
+export class CommandeManager {
+  private static instance: CommandeManager;
+  private commandes: Pizza[] = [];
+
   private constructor() {}
 
-  /**
-   * The static getter that controls access to the singleton instance.
-   *
-   * This implementation allows you to extend the Singleton class while
-   * keeping just one instance of each subclass around.
-   */
-  public static get instance(): Singleton {
-    if (!Singleton.#instance) {
-      Singleton.#instance = new Singleton();
+  public static getInstance(): CommandeManager {
+    if (!CommandeManager.instance) {
+      CommandeManager.instance = new CommandeManager();
     }
-
-    return Singleton.#instance;
+    return CommandeManager.instance;
   }
 
-  /**
-   * Finally, any singleton can define some business logic, which can be
-   * executed on its instance.
-   */
-  public someBusinessLogic() {
-    // ...
+  public ajouterCommande(pizza: Pizza): void {
+    this.commandes.push(pizza);
+    console.log(`Commande ajoutée : Pizza ${pizza.type}`);
+  }
+
+  public afficherCommandes(): void {
+    console.log("Commandes en cours :");
+    this.commandes.forEach((pizza, index) => {
+      console.log(`Commande ${index + 1}:`);
+      pizza.afficher();
+    });
+  }
+
+  public supprimerCommande(index: number): void {
+    if (index >= 0 && index < this.commandes.length) {
+      this.commandes.splice(index, 1);
+      console.log(`Commande ${index + 1} supprimée`);
+    } else {
+      console.log("Index invalide.");
+    }
   }
 }
