@@ -16,26 +16,6 @@ L'objectif est de développer un système de gestion de commandes de pizzas en a
 - Node.js
 - Vitest
 
-## 📦 Structure du projet
-
-Pizzapp/
-├── builderPattern/ → Implémentation du Builder Pattern
-│ └── PizzaBuilder.ts
-├── factoryPattern/ → Implémentation du Factory Pattern
-│ └── PizzaFactory.ts
-├── models/ → Modèle de base Pizza
-│ └── Pizza.ts
-├── singleton/ → Implémentation du Singleton Pattern
-│ └── CommandeManager.ts
-├── tests/ → Tests unitaires avec Vitest
-│ ├── PizzaFactory.test.ts
-│ ├── CommandeManager.test.ts
-│ └── PizzaBuilder.test.ts
-├── index.ts → Démonstration manuelle globale
-├── package.json
-├── tsconfig.json
-└── node_modules/
-
 ## 🚀 Installation & Exécution
 
 ### 1️⃣ Installer les dépendances
